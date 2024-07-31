@@ -80,9 +80,6 @@ jobs:
         cd $OPENWRTROOT
         cat .config
         sudo apt install python2-minimal
-        wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
-        sudo python2.7 get-pip.py
-        pip2 install setuptools pyelftools 
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
