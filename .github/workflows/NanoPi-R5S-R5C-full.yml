@@ -85,6 +85,7 @@ jobs:
         wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
         sudo python2.7 get-pip.py
         sudo pip2 install pyelftools==0.27
+        pip3 install pyelftools
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
