@@ -14,7 +14,7 @@
 # git clone --depth=1 https://github.com/Siriling/5G-Modem-Support package/wwan
 
 # Add iStoreOS
-echo 'src-git HomeLede https://github.com/xiaoqingfengATGH/HomeLede;K5' >> feeds.conf.default
+# echo 'src-git HomeLede https://github.com/xiaoqingfengATGH/HomeLede;K5' >> feeds.conf.default
 # echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
 # echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
 
