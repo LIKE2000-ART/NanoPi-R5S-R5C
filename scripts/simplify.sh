@@ -17,6 +17,11 @@ pushd kenzok8
 git clone --depth=1 https://github.com/kenzok8/openwrt-packages .
 popd
 
+mkdir homelede
+pushd homelede
+git clone --depth=1 https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng .
+popd
+
 mkdir kenzok8-small
 pushd kenzok8-small
 git clone --depth=1 https://github.com/kenzok8/small-package .
@@ -62,6 +67,10 @@ cp -rf ../../kenzok8-small/luci-app-eqos/* luci-app-eqos
 #Wolplus
 mkdir luci-app-wolplus
 cp -rf ../../kenzok8-small/luci-app-wolplus/* luci-app-wolplus
+
+# HomeLede
+mkdir luci-app-homeconnect
+cp -rf ../../feeds-xiaoqingfeng/luci-app-homeconnect/* luci-app-homeconnect
 
 # 存储相关应用
 mkdir gowebdav
