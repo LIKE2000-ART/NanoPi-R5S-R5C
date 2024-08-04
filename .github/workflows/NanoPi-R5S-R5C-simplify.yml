@@ -41,22 +41,35 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Clone Source Code
+    - name: Initialization Environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
       run: |
-        df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        nohup sh -c 'sudo sysctl vm.swappiness=0'
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL https://raw.githubusercontent.com/bigbugcc/openwrts/master/openwrt-env)
+        sudo -E apt-get -qq install build-essential clang llvm flex g++ gawk gcc-multilib gettext \
+        git libncurses5-dev libssl-dev python3-distutils python3-pyelftools python3-setuptools \
+        python3-dev python3-pip rsync rdate unzip zlib1g-dev swig aria2 jq subversion qemu-utils ccache rename \
+        libelf-dev device-tree-compiler libgnutls28-dev coccinelle libgmp3-dev libmpc-dev libfuse-dev gcc-multilib
         pip3 install --user -U pylibfdt
         sudo -E apt-get -qq purge azure-cli ghc* zulu* firefox powershell openjdk* dotnet* google* mysql* php* android*
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
-        sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
+        echo -e "Total CPU cores\t: $(nproc)"
+        cat /proc/cpuinfo | grep 'model name'
+        free -h
+        uname -a
+        [ -f /proc/version ] && cat /proc/version
+        [ -f /etc/issue.net ] && cat /etc/issue.net
+        [ -f /etc/issue ] && cat /etc/issue
+        ulimit -a
+
+    - name: Clone Source Code
+      run: |
+        df -hT $PWD
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update Feeds
       id: update
