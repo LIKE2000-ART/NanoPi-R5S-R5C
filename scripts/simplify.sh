@@ -17,6 +17,12 @@ pushd kenzok8
 git clone --depth=1 https://github.com/kenzok8/openwrt-packages .
 popd
 
+# apppppppp
+mkdir dhdaxcw-app
+pushd dhdaxcw-app
+git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
+popd
+
 mkdir homelede
 pushd homelede
 git clone --depth=1 https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng .
@@ -97,8 +103,8 @@ rm -rf ../../customfeeds/packages/utils/adguardhome
 rm -rf ../../customfeeds/luci/applications/luci-app-adguardhome
 mkdir adguardhome
 mkdir luci-app-adguardhome
-cp -rf ../../kenzok8/adguardhome/* adguardhome
-cp -rf ../../kenzok8/luci-app-adguardhome/* luci-app-adguardhome
+cp -rf ../../dhdaxcw-app/adguardhome/* adguardhome
+cp -rf ../../dhdaxcw-app/luci-app-adguardhome/* luci-app-adguardhome
 cp -rf ../../MyConfig/configs/lede/general/applications/luci-app-adguardhome/* luci-app-adguardhome
 sed -i 's/默认账号和密码均为：admin/默认用户名和密码均为root/' luci-app-adguardhome/po/zh-cn/AdGuardHome.po
 sed -i 's/网页管理账号和密码:admin ,端口:/端口/' luci-app-adguardhome/po/zh-cn/AdGuardHome.po
