@@ -76,6 +76,7 @@ cp -rf ../../kenzok8-small/luci-app-wolplus/* luci-app-wolplus
 
 # HomeLede
 mkdir luci-app-homeconnect
+cp -rf ../../feeds-xiaoqingfeng/homeconnect/* homeconnect
 cp -rf ../../feeds-xiaoqingfeng/luci-app-homeconnect/* luci-app-homeconnect
 
 # 存储相关应用
@@ -271,10 +272,9 @@ popd
 # pcie patch
 cp -f $GITHUB_WORKSPACE/999-fuck-rockchip-pcie.patch target/linux/rockchip/patches-6.1/999-fuck-rockchip-pcie.patch
 
-# 编译新版Sing-box和hysteria，需golang版本1.20或者以上版本
-# pushd customfeeds/packages/lang
-# rm -rf golang
-# git clone https://github.com/kenzok8/golang customfeeds/packages/lang/golang
-# popd
+# 编译新版Sing-box和hysteria，需golang版本1.20或者以上版pushd customfeeds/packages/lang
+rm -rf customfeeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x customfeeds/packages/lang/golang
+
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
