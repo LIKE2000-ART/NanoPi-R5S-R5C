@@ -111,7 +111,7 @@ jobs:
         sudo python2.7 get-pip.py
         sudo pip2 install pyelftools==0.27
         sudo pip3 install pyelftools
-        make download V=s
+        make -j8 download
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
   
