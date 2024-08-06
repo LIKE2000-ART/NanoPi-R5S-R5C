@@ -120,11 +120,11 @@ jobs:
       run: |
         cd $OPENWRTROOT
         echo -e "$(nproc) thread compile"
-        make tools/compile -j$(nproc) V=sc 
-        make toolchain/compile -j$(nproc) V=sc 
-        make target/compile -j$(nproc) V=sc 
+        make tools/compile -j$(nproc) V=s 
+        make toolchain/compile -j$(nproc) V=s 
+        make target/compile -j$(nproc) V=s 
         make diffconfig
-        make package/compile -j$(nproc) IGNORE_ERRORS=1 V=sc 
+        make package/compile -j$(nproc) IGNORE_ERRORS=1 V=s
         make package/index
         cd $OPENWRTROOT/bin/packages/*
         PLATFORM=$(basename `pwd`)
