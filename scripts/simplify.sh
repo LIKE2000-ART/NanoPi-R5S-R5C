@@ -20,7 +20,7 @@ popd
 # apppppppp
 mkdir dhdaxcw-app
 pushd dhdaxcw-app
-git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app
+git clone --depth=1 https://github.com/DHDAXCW/dhdaxcw-app .
 popd
 
 mkdir homelede
@@ -76,8 +76,7 @@ cp -rf ../../kenzok8-small/luci-app-wolplus/* luci-app-wolplus
 
 # HomeLede
 mkdir luci-app-homeconnect
-cp -rf ../../feeds-xiaoqingfeng/homeconnect/* homeconnect
-cp -rf ../../feeds-xiaoqingfeng/luci-app-homeconnect/* luci-app-homeconnect
+cp -rf ../../homelede/luci-app-homeconnect/* luci-app-homeconnect
 
 # 存储相关应用
 mkdir gowebdav
