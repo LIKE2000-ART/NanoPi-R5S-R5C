@@ -59,7 +59,6 @@ jobs:
         libtool lrzsz mkisofs msmtp ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pyelftools \
         python3-setuptools qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim \
         wget xmlto xxd zlib1g-dev
-        make clang llvm nano python3-pip aria2
         pip3 install --user -U pylibfdt
         sudo -E apt -qq purge azure-cli ghc* zulu* firefox powershell openjdk* dotnet* google* mysql* php* android*
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
